@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindMate — Mental Wellness Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">✦</div>
+      <div>
+        <h1>MindMate</h1>
+        <span>Your calm corner</span>
+      </div>
+    </div>
+
+    <button class="new-chat" id="newChat">＋ New conversation</button>
+
+    <div class="side-section">
+      <div class="section-label">QUICK CHECK-IN</div>
+      <button class="side-btn" data-message="I'm feeling stressed today">🌊 <span>I'm stressed</span></button>
+      <button class="side-btn" data-message="I'm feeling sad">🌧️ <span>I'm feeling sad</span></button>
+      <button class="side-btn" data-message="I'm feeling anxious">🫧 <span>I'm anxious</span></button>
+      <button class="side-btn" data-message="I'm feeling lonely">🌱 <span>I'm lonely</span></button>
+    </div>
+
+    <div class="side-section">
+      <div class="section-label">SELF-CARE</div>
+      <button class="side-btn" data-message="Give me a quick grounding exercise">🧘 <span>Grounding exercise</span></button>
+      <button class="side-btn" data-message="I can't sleep">🌙 <span>Sleep support</span></button>
+      <button class="side-btn" data-message="I need study motivation">📚 <span>Study stress</span></button>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="privacy-card">
+        <div class="shield">✓</div>
+        <div><strong>A safe space</strong><small>This demo stores chats only in your browser.</small></div>
+      </div>
+      <div class="disclaimer">MindMate is not a replacement for professional mental-health care.</div>
+    </div>
+  </aside>
+
+  <main class="chat-area">
+    <header class="topbar">
+      <div class="mobile-brand"><div class="logo">✦</div><b>MindMate</b></div>
+      <div class="status">
+        <span class="status-dot"></span>
+        <span>Support companion</span>
+      </div>
+      <button class="icon-btn" id="clearChat" title="Clear conversation">⌫</button>
+    </header>
+
+    <section class="chat-content" id="chatContent">
+      <div class="welcome" id="welcome">
+        <div class="welcome-orb">🌿</div>
+        <div class="eyebrow">WELCOME TO MINDMATE</div>
+        <h2>A little space to<br><span>feel heard.</span></h2>
+        <p>Talk about your day, your worries, college pressure, or anything that's on your mind. No judgment.</p>
+
+        <div class="mood-grid">
+          <button data-message="I'm feeling stressed today"><span>🌊</span><b>Stressed</b><small>Help me slow down</small></button>
+          <button data-message="I'm feeling sad"><span>🌧️</span><b>Low mood</b><small>I need someone to listen</small></button>
+          <button data-message="I'm feeling anxious"><span>🫧</span><b>Anxious</b><small>Help me feel grounded</small></button>
+          <button data-message="I need study motivation"><span>📚</span><b>Study pressure</b><small>Let's make a plan</small></button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages"></div>
+    </section>
+
+    <div class="composer-wrap">
+      <div class="suggestions">
+        <button data-message="How can I calm down?">How can I calm down?</button>
+        <button data-message="I feel overwhelmed">I feel overwhelmed</button>
+        <button data-message="Give me a breathing exercise">Breathing exercise</button>
+      </div>
+      <div class="composer">
+        <textarea id="messageInput" rows="1" placeholder="Share what's on your mind..."></textarea>
+        <button id="sendBtn" class="send" aria-label="Send">➤</button>
+      </div>
+      <div class="footer-note">MindMate can make mistakes. For serious concerns, please reach out to a qualified professional.</div>
+    </div>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
